@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    <script>
+      //creating a var to get the name input from local storage
+      var name = localStorage.getItem("name");
+
+      //if there is a name in the local storage, it will say hello + name
+      if(name != "null")
+      {
+        alert("Hello " + name);
+      }
+      //otherwise it will ask for your name and set it to the name var
+      else
+      {
+        var yourName = prompt("What is your name?");
+        localStorage.setItem("name", yourName);
+      }
+    </script>
+  </body>
+</html>

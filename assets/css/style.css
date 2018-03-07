@@ -1,0 +1,25 @@
+body {
+  margin: 0;
+}
+
+.flex {
+  display: flex;
+}
+
+.flex.full-height {
+  /* vh is viewport height, not using % because it wouldnt change it */
+  height: 100vh;
+}
+
+.flex.column {
+  flex-direction: column;
+}
+
+.flex.row {
+  flex-direction: row;
+}
+
+ul {
+  /*populates the rest of the viewport*/
+  flex: 1;
+}
