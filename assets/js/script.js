@@ -93,10 +93,33 @@ function buildList()
     }
 
     var edit = document.createElement('button')
-    edit.innerHTML = "Edit";   
+    edit.innerHTML = "Edit";
+    edit.classList.add("editBtn");
     liElm.appendChild(edit);
 
+    var deleteBtn = document.createElement('button')
+    deleteBtn.innerHTML = "Delete";
+    liElm.appendChild(deleteBtn);
+
     ulElm.appendChild(liElm);
+  }
+}
+
+function nodeEdit () {
+
+}
+
+function nodeDelete() {
+
+}
+
+function addEventsToEditBtns() {
+  var editBtns = document.querySelectorAll('.editBtn');
+
+  for(var i = 0; i < editBtns.length; i++) {
+    editBtns[i].addEventListener('click', function(event) {
+      console.log('hello');
+    });
   }
 }
 
@@ -104,6 +127,8 @@ function buildList()
 window.onload = function()
 {
   buildList();
+  addEventsToEditBtns();
+
 }
 
 var submitBtn = document.querySelector("#addNote");
