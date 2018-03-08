@@ -92,6 +92,9 @@ function buildList()
       liElm.appendChild(pDateElm);
     }
 
+    var edit = document.createElement('button')
+    edit.innerHTML = "Edit";
+
     ulElm.appendChild(liElm);
   }
 }
