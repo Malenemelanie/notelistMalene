@@ -106,9 +106,11 @@ function buildList()
 
     var deleteBtn = document.createElement('button')
     deleteBtn.innerHTML = "Delete";
+    deleteBtn.setAttribute("data-index", i);
 
     deleteBtn.addEventListener('click', function(event) {
       var index = event.target.getAttribute("data-index");
+      noteDelete(index);
     });
 
     liElm.appendChild(deleteBtn);
@@ -125,8 +127,15 @@ function noteEdit (i) {
   buildList();
 }
 
-function noteDelete() {
+function noteDelete(i) {
 
+  console.log(i);
+
+  var notes = getLocal();
+  notes.splice(i, 1);
+
+  setLocal(notes);
+  buildList();
 }
 
 //function() is anonymous
