@@ -94,11 +94,21 @@ function buildList()
 
     var edit = document.createElement('button')
     edit.innerHTML = "Edit";
+
+    edit.addEventListener('click', function(event) {
+      console.log(event);
+    });
+
     edit.classList.add("editBtn");
     liElm.appendChild(edit);
 
     var deleteBtn = document.createElement('button')
     deleteBtn.innerHTML = "Delete";
+
+    deleteBtn.addEventListener('click', function(event) {
+      console.log(event);
+    });
+
     liElm.appendChild(deleteBtn);
 
     ulElm.appendChild(liElm);
@@ -113,22 +123,10 @@ function nodeDelete() {
 
 }
 
-function addEventsToEditBtns() {
-  var editBtns = document.querySelectorAll('.editBtn');
-
-  for(var i = 0; i < editBtns.length; i++) {
-    editBtns[i].addEventListener('click', function(event) {
-      console.log('hello');
-    });
-  }
-}
-
 //function() is anonymous
 window.onload = function()
 {
   buildList();
-  addEventsToEditBtns();
-
 }
 
 var submitBtn = document.querySelector("#addNote");
