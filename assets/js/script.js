@@ -94,9 +94,11 @@ function buildList()
 
     var edit = document.createElement('button')
     edit.innerHTML = "Edit";
+    edit.setAttribute("data-index", i);
 
     edit.addEventListener('click', function(event) {
-      console.log(event);
+      var index = event.target.getAttribute("data-index");
+      noteEdit(index);
     });
 
     edit.classList.add("editBtn");
@@ -106,7 +108,7 @@ function buildList()
     deleteBtn.innerHTML = "Delete";
 
     deleteBtn.addEventListener('click', function(event) {
-      console.log(event);
+      var index = event.target.getAttribute("data-index");
     });
 
     liElm.appendChild(deleteBtn);
@@ -115,11 +117,15 @@ function buildList()
   }
 }
 
-function nodeEdit () {
+function noteEdit (i) {
+  var notes = getLocal();
+  notes[i].text = document.querySelector("#noteText").value;
 
+  setLocal(notes);
+  buildList();
 }
 
-function nodeDelete() {
+function noteDelete() {
 
 }
 
