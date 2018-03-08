@@ -93,7 +93,8 @@ function buildList()
     }
 
     var edit = document.createElement('button')
-    edit.innerHTML = "Edit";
+    edit.innerHTML = "Edit";   
+    liElm.appendChild(edit);
 
     ulElm.appendChild(liElm);
   }
