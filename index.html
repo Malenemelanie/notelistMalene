@@ -16,11 +16,12 @@
       <ul></ul>
 
       <footer>
-          <input type="text">
-          <div><input type="checkbox">Important</div>
+          <input type="text" id="noteText">
+          <!--value="1" means true in the js, 0 means false-->
+          <div><input type="checkbox" value="1" id="noteImportant">Important</div>
           <!--datetime is obsolete, datetype-local is used now-->
-          <input type="datetime-local">
-          <button>Add</button>
+          <input type="datetime-local" id="noteTime">
+          <button id="addNote">Add</button>
       </footer>
     </div>
 

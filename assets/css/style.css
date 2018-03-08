@@ -22,4 +22,6 @@ body {
 ul {
   /*populates the rest of the viewport*/
   flex: 1;
+  /*will automatically put a scroll inside*/
+  overflow: auto;
 }
